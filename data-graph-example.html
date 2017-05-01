@@ -8,7 +8,7 @@
   <script>
     function makeplot() {
     Plotly.d3.csv(
-    	"https://raw.githubusercontent.com/plotly/datasets/master/2014_apple_stock.csv",
+    	"https://raw.githubusercontent.com/scottkarr/IS608FinalProject/master/data/ELAScoresByBorough.csv",
     	function(data) {
     		processData(data);
     	}
@@ -21,8 +21,8 @@
 
     for (var i = 0; i < allRows.length; i++) {
     	row = allRows[i];
-    	x.push(row["AAPL_x"]);
-    	y.push(row["AAPL_y"]);
+    	x.push(row["BoroughGradeYear"]);
+    	y.push(row["Level_Pass_Pct"]);
     }
     console.log("X", x, "Y", y, "SD", standard_deviation);
     makePlotly(x, y, standard_deviation);
